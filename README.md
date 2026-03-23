@@ -6,7 +6,7 @@ This project focuses on cleaning a real-world dataset of tech industry layoffs u
 
 The goal was to transform the raw data into a clean, analysis-ready table using structured SQL queries.
 
----
+
 ## 📂 Dataset
 
 - **Source:** Layoffs Dataset — from AlexTheAnalyst
@@ -17,15 +17,15 @@ The goal was to transform the raw data into a clean, analysis-ready table using 
 
 - **Time Period:** Tech layoffs from 2022–2023
 
----
-### 🛠️ Tools Used
+
+## 🛠️ Tools Used
 
 - MySQL — all data cleaning performed in SQL
 
 - MySQL Workbench — query execution and table management
 
----
-### 🔍 Data Cleaning Steps
+
+## 🔍 Data Cleaning Steps
 
 1. **Created a Staging Table**
 
@@ -59,8 +59,8 @@ The goal was to transform the raw data into a clean, analysis-ready table using 
 
     Dropped the helper row_num column after it was no longer needed.
 
----
-### 💡 Key SQL Concepts Demonstrated
+
+## 💡 Key SQL Concepts Demonstrated
 
 - **Window Functions:** ROW_NUMBER() OVER (PARTITION BY ...)
 
@@ -74,8 +74,8 @@ The goal was to transform the raw data into a clean, analysis-ready table using 
 
 - **DML (Data Manipulation Language):** SELECT, UPDATE, DELETE, INSERT INTO
 
----
-### 📁 Repository Structure
+
+## 📁 Repository Structure
 
 ├── README.md
 
@@ -86,8 +86,8 @@ The goal was to transform the raw data into a clean, analysis-ready table using 
 └── sql/
     └── data_cleaning.sql    # Full cleaning script
     
----
-### 🚀 How to Reproduce
+
+## 🚀 How to Reproduce
 
 1. Import data/layoffs.csv into MySQL as a table called layoffs
 
@@ -97,8 +97,8 @@ The goal was to transform the raw data into a clean, analysis-ready table using 
 
 1. The final cleaned table will be layoffs_staging2
 
----
-### 👤 Author
+
+## 👤 Author
 
 **Sofia Costa**
 
