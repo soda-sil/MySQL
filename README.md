@@ -9,13 +9,13 @@ The goal was to transform the raw data into a clean, analysis-ready table using 
 ---
 ### 📂 Dataset
 
-- Source: Layoffs Dataset — from AlexTheAnalyst
+- **Source:** Layoffs Dataset — from AlexTheAnalyst
 
-- Rows: ~2,361 records
+- **Rows:** ~2,361 records
 
-- Columns: company, location, industry, total_laid_off, percentage_laid_off, date, stage, country, funds_raised_millions
+- **Columns:** company, location, industry, total_laid_off, percentage_laid_off, date, stage, country, funds_raised_millions
 
-- Time Period: Tech layoffs from 2022–2023
+- **Time Period:** Tech layoffs from 2022–2023
 
 ---
 ### 🛠️ Tools Used
@@ -78,26 +78,29 @@ The goal was to transform the raw data into a clean, analysis-ready table using 
 ### 📁 Repository Structure
 
 ├── README.md
+
 ├── data/
+
 │   └── layoffs.csv          # Raw dataset
+
 └── sql/
     └── data_cleaning.sql    # Full cleaning script
     
 ---
 ### 🚀 How to Reproduce
 
-Import data/layoffs.csv into MySQL as a table called layoffs
+1. Import data/layoffs.csv into MySQL as a table called layoffs
 
-Open sql/data_cleaning.sql in MySQL Workbench
+1. Open sql/data_cleaning.sql in MySQL Workbench
 
-Run the script from top to bottom — each section is clearly commented
+1. Run the script from top to bottom — each section is clearly commented
 
-The final cleaned table will be layoffs_staging2
+1. The final cleaned table will be layoffs_staging2
 
 ---
 ### 👤 Author
 
-Sofia Costa
+**Sofia Costa**
 
 LinkedIn: https://www.linkedin.com/in/sofiassvcosta/
 
