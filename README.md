@@ -7,7 +7,7 @@ This project focuses on cleaning a real-world dataset of tech industry layoffs u
 The goal was to transform the raw data into a clean, analysis-ready table using structured SQL queries.
 
 ---
-### 📂 Dataset
+## 📂 Dataset
 
 - **Source:** Layoffs Dataset — from AlexTheAnalyst
 
@@ -35,7 +35,7 @@ The goal was to transform the raw data into a clean, analysis-ready table using 
 
     Used ROW_NUMBER() with PARTITION BY across all relevant columns to identify and delete exact duplicate rows.
 
-1. **3Standardized Data**
+1. **Standardized Data**
 
     Trimmed whitespace from company names using TRIM()
 
