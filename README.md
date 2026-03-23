@@ -9,70 +9,70 @@ The goal was to transform the raw data into a clean, analysis-ready table using 
 ---
 ### 📂 Dataset
 
-Source: Layoffs Dataset — from AlexTheAnalyst
+- Source: Layoffs Dataset — from AlexTheAnalyst
 
-Rows: ~2,361 records
+- Rows: ~2,361 records
 
-Columns: company, location, industry, total_laid_off, percentage_laid_off, date, stage, country, funds_raised_millions
+- Columns: company, location, industry, total_laid_off, percentage_laid_off, date, stage, country, funds_raised_millions
 
-Time Period: Tech layoffs from 2022–2023
+- Time Period: Tech layoffs from 2022–2023
 
 ---
 ### 🛠️ Tools Used
 
-MySQL — all data cleaning performed in SQL
+- MySQL — all data cleaning performed in SQL
 
-MySQL Workbench — query execution and table management
+- MySQL Workbench — query execution and table management
 
 ---
 ### 🔍 Data Cleaning Steps
 
 **1. Created a Staging Table**
 
-Preserved the original raw data by working on a copy (layoffs_staging), ensuring the source data remained untouched.
+    Preserved the original raw data by working on a copy (layoffs_staging), ensuring the source data remained untouched.
 
 **2. Removed Duplicates**
 
-Used ROW_NUMBER() with PARTITION BY across all relevant columns to identify and delete exact duplicate rows.
+    Used ROW_NUMBER() with PARTITION BY across all relevant columns to identify and delete exact duplicate rows.
 
 **3. Standardized Data**
 
-Trimmed whitespace from company names using TRIM()
+    Trimmed whitespace from company names using TRIM()
 
-Unified industry labels — consolidated variations like Crypto Currency, CryptoCurrency → Crypto
+    Unified industry labels — consolidated variations like Crypto Currency, CryptoCurrency → Crypto
 
-Fixed encoding errors — corrected DÃ¼sseldorf → Dusseldorf
+    Fixed encoding errors — corrected DÃ¼sseldorf → Dusseldorf
 
-Cleaned country names — removed trailing periods from United States.
+    Cleaned country names — removed trailing periods from United States.
 
 **4. Fixed Data Types**
 
-Converted the date column from TEXT to proper DATE format using STR_TO_DATE() and ALTER TABLE.
+    Converted the date column from TEXT to proper DATE format using STR_TO_DATE() and ALTER TABLE.
 
 **5. Handled NULL Values**
 
-Identified rows where both total_laid_off and percentage_laid_off were NULL (unusable records) and deleted them
+    Identified rows where both total_laid_off and percentage_laid_off were NULL (unusable records) and deleted them
 
-Used a self-JOIN to populate missing industry values from other rows of the same company
+    Used a self-JOIN to populate missing industry values from other rows of the same company
 
 **6. Removed Unnecessary Columns**
 
-Dropped the helper row_num column after it was no longer needed.
+    Dropped the helper row_num column after it was no longer needed.
 
 ---
 ### 💡 Key SQL Concepts Demonstrated
 
-**Window Functions:** ROW_NUMBER() OVER (PARTITION BY ...)
+- **Window Functions:** ROW_NUMBER() OVER (PARTITION BY ...)
 
-**CTEs:** Isolating duplicates with WITH clause
+- **CTEs:** Isolating duplicates with WITH clause
 
-**String Functions:** TRIM(), LIKE, STR_TO_DATE(), TRIM(TRAILING ...)
+- **String Functions:** TRIM(), LIKE, STR_TO_DATE(), TRIM(TRAILING ...)
 
-**Self JOIN:** Filling NULL industry values from matching rows
+- **Self JOIN:** Filling NULL industry values from matching rows
 
-**DDL (Data Definition Language):** CREATE, ALTER TABLE, MODIFY COLUMN, DROP COLUMN
+- **DDL (Data Definition Language):** CREATE, ALTER TABLE, MODIFY COLUMN, DROP COLUMN
 
-**DML (Data Manipulation Language):** SELECT, UPDATE, DELETE, INSERT INTO
+- **DML (Data Manipulation Language):** SELECT, UPDATE, DELETE, INSERT INTO
 
 ---
 ### 📁 Repository Structure
