@@ -1,10 +1,12 @@
 # 🧹 Data Cleaning in MySQL — Tech Layoffs Dataset
 
 📌 Project Overview
+
 This project focuses on cleaning a real-world dataset of tech industry layoffs using MySQL. The raw dataset contained duplicates, inconsistent formatting, encoding errors, null values, and incorrect data types — all common issues found in production data.
 The goal was to transform the raw data into a clean, analysis-ready table using structured SQL queries.
 
 📂 Dataset
+
 Source: Layoffs Dataset — from AlexTheAnalyst
 Rows: ~2,361 records
 Columns: company, location, industry, total_laid_off, percentage_laid_off, date, stage, country, funds_raised_millions
@@ -12,11 +14,13 @@ Time Period: Tech layoffs from 2022–2023
 
 
 🛠️ Tools Used
+
 MySQL — all data cleaning performed in SQL
 MySQL Workbench — query execution and table management
 
 
 🔍 Data Cleaning Steps
+
 1. Created a Staging Table
 Preserved the original raw data by working on a copy (layoffs_staging), ensuring the source data remained untouched.
 2. Removed Duplicates
@@ -35,6 +39,7 @@ Used a self-JOIN to populate missing industry values from other rows of the same
 Dropped the helper row_num column after it was no longer needed.
 
 💡 Key SQL Concepts Demonstrated
+
 Window Functions: ROW_NUMBER() OVER (PARTITION BY ...)
 CTEs: Isolating duplicates with WITH clause
 String Functions: TRIM(), LIKE, STR_TO_DATE(), TRIM(TRAILING ...)
@@ -43,6 +48,7 @@ DDL (Data Definition Language): CREATE, ALTER TABLE, MODIFY COLUMN, DROP COLUMN
 DML (Data Manipulation Language): SELECT, UPDATE, DELETE, INSERT INTO
 
 📁 Repository Structure
+
 ├── README.md
 ├── data/
 │   └── layoffs.csv          # Raw dataset
@@ -50,6 +56,7 @@ DML (Data Manipulation Language): SELECT, UPDATE, DELETE, INSERT INTO
     └── data_cleaning.sql    # Full cleaning script
 
 🚀 How to Reproduce
+
 Import data/layoffs.csv into MySQL as a table called layoffs
 Open sql/data_cleaning.sql in MySQL Workbench
 Run the script from top to bottom — each section is clearly commented
@@ -57,6 +64,7 @@ The final cleaned table will be layoffs_staging2
 
 
 👤 Author
+
 Sofia Costa
 LinkedIn: https://www.linkedin.com/in/sofiassvcosta/
 GitHub: https://github.com/soda-sil
