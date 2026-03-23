@@ -27,15 +27,15 @@ The goal was to transform the raw data into a clean, analysis-ready table using 
 ---
 ### 🔍 Data Cleaning Steps
 
-**1. Created a Staging Table**
+1. **Created a Staging Table**
 
     Preserved the original raw data by working on a copy (layoffs_staging), ensuring the source data remained untouched.
 
-**2. Removed Duplicates**
+1. **Removed Duplicates**
 
     Used ROW_NUMBER() with PARTITION BY across all relevant columns to identify and delete exact duplicate rows.
 
-**3. Standardized Data**
+1. **3Standardized Data**
 
     Trimmed whitespace from company names using TRIM()
 
@@ -45,17 +45,17 @@ The goal was to transform the raw data into a clean, analysis-ready table using 
 
     Cleaned country names — removed trailing periods from United States.
 
-**4. Fixed Data Types**
+1. **Fixed Data Types**
 
     Converted the date column from TEXT to proper DATE format using STR_TO_DATE() and ALTER TABLE.
 
-**5. Handled NULL Values**
+1. **Handled NULL Values**
 
     Identified rows where both total_laid_off and percentage_laid_off were NULL (unusable records) and deleted them
 
     Used a self-JOIN to populate missing industry values from other rows of the same company
 
-**6. Removed Unnecessary Columns**
+1. **Removed Unnecessary Columns**
 
     Dropped the helper row_num column after it was no longer needed.
 
