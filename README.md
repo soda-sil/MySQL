@@ -100,7 +100,7 @@ The goal was to transform the raw data into a clean, analysis-ready table using 
 
 ## 👤 Author
 
-**Sofia Costa**
+### Sofia Costa
 
 LinkedIn: https://www.linkedin.com/in/sofiassvcosta/
 
