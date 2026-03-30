@@ -2,7 +2,7 @@
 
 ## 📌 Project Overview
 
-This project focuses on cleaning a real-world dataset of tech industry layoffs using MySQL. The raw dataset contained duplicates, inconsistent formatting, encoding errors, null values, and incorrect data types — all common issues found in production data.
+This project focuses on cleaning a real-world dataset of tech industry layoffs using MySQL. The raw dataset contained duplicates, inconsistent formatting, encoding errors, null values, and incorrect data types, all common issues found in production data.
 
 The goal was to transform the raw data into a clean, analysis-ready table using structured SQL queries.
 
@@ -17,33 +17,33 @@ The goal was to transform the raw data into a clean, analysis-ready table using 
 
 ## 🛠️ Tools Used
 
-- MySQL — all data cleaning performed in SQL
-- MySQL Workbench — query execution and table management
+- **MySQL:** all data cleaning performed in SQL
+- **MySQL Workbench:** query execution and table management
 
 
 ## 🔍 Data Cleaning Steps
 
 1. **Created a Staging Table**
-    Preserved the original raw data by working on a copy (layoffs_staging), ensuring the source data remained untouched.
+    - Preserved the original raw data by working on a copy (layoffs_staging), ensuring the source data remained untouched.
 
 1. **Removed Duplicates**
-    Used ROW_NUMBER() with PARTITION BY across all relevant columns to identify and delete exact duplicate rows.
+    - Used ROW_NUMBER() with PARTITION BY across all relevant columns to identify and delete exact duplicate rows.
 
 1. **Standardized Data**
-    Trimmed whitespace from company names using TRIM()
-    Unified industry labels — consolidated variations like Crypto Currency, CryptoCurrency → Crypto
-    Fixed encoding errors — corrected DÃ¼sseldorf → Dusseldorf
-    Cleaned country names — removed trailing periods from United States.
+    - Trimmed whitespace from company names using TRIM()
+    - Unified industry labels: consolidated variations like Crypto Currency, CryptoCurrency → Crypto
+    - Fixed encoding errors: corrected DÃ¼sseldorf → Dusseldorf
+    - Cleaned country names: removed trailing periods from United States.
 
 1. **Fixed Data Types**
-    Converted the date column from TEXT to proper DATE format using STR_TO_DATE() and ALTER TABLE.
+    - Converted the date column from TEXT to proper DATE format using STR_TO_DATE() and ALTER TABLE.
 
 1. **Handled NULL Values**
-    Identified rows where both total_laid_off and percentage_laid_off were NULL (unusable records) and deleted them
-    Used a self-JOIN to populate missing industry values from other rows of the same company
+    - Identified rows where both total_laid_off and percentage_laid_off were NULL (unusable records) and deleted them
+    - Used a self-JOIN to populate missing industry values from other rows of the same company
 
 1. **Removed Unnecessary Columns**
-    Dropped the helper row_num column after it was no longer needed.
+     - Dropped the helper row_num column after it was no longer needed.
 
 
 ## 💡 Key SQL Concepts Demonstrated
