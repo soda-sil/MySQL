@@ -9,7 +9,7 @@ The goal was to transform the raw data into a clean, analysis-ready table using 
 
 ## 📂 Dataset
 
-- **Source:** Layoffs Dataset — from AlexTheAnalyst
+- **Source:** Layoffs Dataset from AlexTheAnalyst
 - **Rows:** ~2,361 records
 - **Columns:** company, location, industry, total_laid_off, percentage_laid_off, date, stage, country, funds_raised_millions
 - **Time Period:** Tech layoffs from 2022–2023
