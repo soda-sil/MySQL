@@ -56,18 +56,6 @@ The goal was to transform the raw data into a clean, analysis-ready table using 
 - **DML (Data Manipulation Language):** SELECT, UPDATE, DELETE, INSERT INTO
 
 
-## 📁 Repository Structure
-
-├── README.md
-
-├── data/
-
-│   └── layoffs.csv          # Raw dataset
-
-└── sql/
-    └── data_cleaning.sql    # Full cleaning script
-    
-
 ## 🚀 How to Reproduce
 
 1. Import data/layoffs.csv into MySQL as a table called layoffs
@@ -81,4 +69,5 @@ The goal was to transform the raw data into a clean, analysis-ready table using 
 ### Sofia Costa
 
 https://www.linkedin.com/in/sofiassvcosta/
+
 https://github.com/soda-sil
